@@ -1,6 +1,3 @@
 class Solution:
     def convertTemperature(self, celsius: float) -> List[float]:
-        a=[]
-        a.append(celsius+273.15)
-        a.append(celsius*1.8+32.00)
-        return a
+        return [celsius+273.15,celsius*1.80+32.00]
