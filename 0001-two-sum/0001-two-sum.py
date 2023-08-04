@@ -1,8 +1,11 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        seen = {} # 2 7 11 15 9
-        for i, num in enumerate(nums): ## i=0 num=2
-            if target - num in seen:
-                return [seen[target - num], i] 
-            seen[num] = i # 0,2 0,1 
-        return [-1, -1]
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        previousmap={}
+        for index,number in enumerate(nums):
+            diff= target - number
+            if diff in previousmap:
+                return [previousmap[diff],index]
+            previousmap[number]=index
+        return
+        
+        
