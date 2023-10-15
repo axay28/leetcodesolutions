@@ -1,8 +1,12 @@
 class Solution:
-    @cache
-    def climbStairs(self, n: int) -> int:
+    def climbStairs(self, n: int) -> int: 
         if n <=2:
             return n
-        else:
-            return self.climbStairs(n-1)+self.climbStairs(n-2)
-        
+        prev1=1
+        prev2=2
+        current=0
+        for i in range(2,n):
+            current=prev1+prev2
+            prev1=prev2
+            prev2=current
+        return prev2
