@@ -8,6 +8,4 @@ class Solution:
 
         
         largest1, largest2 = heapq.heappop(max_heap), heapq.heappop(max_heap)
-        largest1-=1
-        largest2-=1
-        return largest1*largest2
+        return (largest1-1)*(largest2-1)
