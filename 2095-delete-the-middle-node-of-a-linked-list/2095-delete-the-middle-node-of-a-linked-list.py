@@ -10,7 +10,8 @@ class Solution:
         fast, slow = head.next.next, head # FAST =4, SLOW =1
         while fast and fast.next: 
             slow = slow.next #3 4
-            fast = fast.next.next#1 6
-        slow.next = slow.next.next #1 
+            fast = fast.next.next#
+        slow.next = slow.next.next
         return head
+        
         
