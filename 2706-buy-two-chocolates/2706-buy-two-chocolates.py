@@ -1,9 +1,11 @@
 class Solution:
     def buyChoco(self, prices: List[int], money: int) -> int:
-        one=min(prices)
-        prices.remove(one)
-        two=min(prices)
-        if money>=one+two:
-            return money-(one+two)
+        if len(prices)<2:
+            return money
+        heapq.heapify(prices)
+        one=heapq.heappop(prices)
+        two=heapq.heappop(prices)
+        if money >= one + two:
+            return money - (one + two)
         
         return money
