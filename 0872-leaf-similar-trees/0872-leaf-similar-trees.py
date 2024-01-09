@@ -9,11 +9,12 @@ class Solution:
         def dfs(root,res):
             if root is None:
                 return
+            
+            dfs(root.left,res)
+            dfs(root.right,res)
             if not root.left and not root.right:
                 res.append(root.val)
                 return
-            dfs(root.left,res)
-            dfs(root.right,res)
         res1,res2=[],[]    
         dfs(root1,res1)
         dfs(root2,res2)
