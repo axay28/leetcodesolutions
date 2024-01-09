@@ -7,9 +7,8 @@
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
         def dfs(root,res):
-            if root is None:
-                return
-            
+            if not root:
+                return False
             dfs(root.left,res)
             dfs(root.right,res)
             if not root.left and not root.right:
