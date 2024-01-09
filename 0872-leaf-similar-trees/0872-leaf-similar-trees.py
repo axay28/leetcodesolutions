@@ -13,7 +13,7 @@ class Solution:
             dfs(root.right,res)
             if not root.left and not root.right:
                 res.append(root.val)
-                return
+                return True
         res1,res2=[],[]    
         dfs(root1,res1)
         dfs(root2,res2)
