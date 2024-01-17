@@ -1,8 +1,14 @@
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
-        seen=set()
-        for freq in collections.Counter(arr).values():
-            if freq in seen:
+        freq={}
+        for a in arr:
+            if a in freq:
+                freq[a]+=1
+            else:
+                freq[a]=1
+        seen_freq={}
+        for f in freq.values():
+            if f in seen_freq:
                 return False
-            seen.add(freq)
+            seen_freq[f] = True
         return True
