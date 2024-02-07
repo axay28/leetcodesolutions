@@ -6,6 +6,6 @@ class Solution:
             if sorted_string not in mydict:
                 mydict[sorted_string]=[]
             mydict[sorted_string].append(s)
-        return mydict.values()
+        return list(mydict.values())
                 
         
