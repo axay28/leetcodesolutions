@@ -12,12 +12,14 @@ class Solution:
             return res
         q=deque([root])
         while q:
-            res.append(q[0].val)
+            rightside=None
             for i in range(len(q)):
                 popped=q.popleft()
-                if popped.right:
-                    q.append(popped.right)
-                if popped.left:
+                if popped:
+                    rightside=popped
                     q.append(popped.left)
+                    q.append(popped.right)
+            if rightside:
+                res.append(rightside.val)
         return res
                     
