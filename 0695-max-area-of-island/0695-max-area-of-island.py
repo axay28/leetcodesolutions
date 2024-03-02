@@ -11,6 +11,7 @@ class Solution:
         area=0
         for r in range(rows):
             for c in range(cols):
-                area=max(area,dfs(r,c))
+                if grid[r][c]==1 and (r,c) not in visited:
+                    area=max(area,dfs(r,c))
         return area
             
