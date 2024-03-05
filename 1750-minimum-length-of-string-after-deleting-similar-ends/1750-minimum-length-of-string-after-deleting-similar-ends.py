@@ -9,5 +9,5 @@ class Solution:
                 l+=1
             while r>=l and current==s[r]:
                 r-=1
-        return r-l+1 if l<=r else 0
+        return max(r-l+1,0)
             
