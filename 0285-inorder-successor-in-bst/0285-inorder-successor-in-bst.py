@@ -8,14 +8,12 @@
 class Solution:
     def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> Optional[TreeNode]:
         #inorder - left node right
-        ans=None
         if not root:
-            return
-        while root:
-            if p.val>=root.val:
-                root=root.right
-            else:
-                ans=root
-                root=root.left
-        return ans
+            return None
+        elif p.val>=root.val:
+            return self.inorderSuccessor(root.right,p)
+        else:
+            left= self.inorderSuccessor(root.left,p) # for p = 4 its successor is root
+            return left if left else root
         
+    
