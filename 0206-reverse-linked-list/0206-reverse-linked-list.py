@@ -3,12 +3,14 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+# Recursive 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        previous,current=None,head
-        while(current!=None):
-            nxt=current.next
-            current.next=previous
-            previous=current
-            current=nxt
-        return previous
+        if not head:
+            return None
+        newhead=head
+        if head.next:
+            newhead=self.reverseList(head.next)
+            head.next.next=head
+        head.next=None
+        return newhead
