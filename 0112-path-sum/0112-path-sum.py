@@ -12,5 +12,7 @@ class Solution:
             cursum+=node.val
             if not node.left and not node.right:
                 return cursum==targetSum
-            return (dfs(node.left,cursum) or dfs(node.right,cursum))        
+            return (dfs(node.left,cursum) or dfs(node.right,cursum))
+            
         return dfs(root,0)
+        
