@@ -12,6 +12,6 @@ class Solution:
                 return True
             else:
                 visited.add(head)
-            head=head.next
+                head=head.next
         return False
         
