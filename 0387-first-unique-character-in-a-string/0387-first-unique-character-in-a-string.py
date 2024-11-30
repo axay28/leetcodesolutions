@@ -1,10 +1,10 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        count=collections.Counter()
+        counter=collections.Counter()
         for c in s:
-            count[c]+=1
-        for i,x in enumerate(s):
-            if count[x]==1:
+            counter[c]+=1
+        for i,v in enumerate(s):
+            if counter[v]==1:
                 return i
         return -1
         
